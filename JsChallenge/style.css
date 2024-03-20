@@ -1,0 +1,52 @@
+body{
+    background-color: cadetblue;
+}
+p{
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 110px;
+    margin-bottom: 30px;
+
+}
+.stopwatch{
+    height: 50px;
+    width: 1520px;
+    font-size: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.buttons{
+    width: 750px;
+    height: 200px;
+padding-left: 570px;
+margin-top: 20px;
+}
+#start{
+    font-size: 40px;
+    margin-right: 20px;
+    color: red;
+
+}
+#start:hover{
+    background-color: black;
+}
+#pause{
+    font-size: 40px;
+    margin-right: 20px;
+    color: palevioletred;
+}
+#pause:hover{
+    background-color: black;
+}
+#reset{
+    font-size: 40px;
+    color: blueviolet;  
+     
+}
+#reset:hover{
+    background-color: black;
+}
