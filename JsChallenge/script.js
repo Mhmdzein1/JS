@@ -1,36 +1,44 @@
-let [ minutes,seconds]=[0,0];
+let minutes = 0;
+let seconds = 0;
 let watch= document.querySelector(".stopwatch");
 let interval=null
-let startEL= document.getElementById("start");
-let pauseEL= document.getElementById("pause");
-let resetEL= document.getElementById("reset");
+let startBtn= document.getElementById("start");
+let pauseBtn= document.getElementById("pause");
+let resetBtn= document.getElementById("reset");
 
-startEL.addEventListener("click",
-() =>{
-    if (interval !==null){
+startBtn.addEventListener("click", startTimer);
+
+function startTimer() {
+    if (interval !== null) {
         clearInterval(interval);
     }
-    interval= setInterval(displayTimer,1000);
-})
+    interval = setInterval(displayTimer, 1000);
+}
 
-pause.addEventListener("click", () => {
+pauseBtn.addEventListener("click", pauseTimer);
+
+function pauseTimer() {
     clearInterval(interval);
-});
+};
 
-reset.addEventListener("click", () => {
+resetBtn.addEventListener("click",resetTimer );
+function resetTimer(){
     clearInterval(interval);
     [ minutes,seconds] = [0, 0];
     watch.innerHTML = "00 : 00 ";
-}); 
+}; 
 
 function displayTimer() {
-   seconds++
-        if(seconds == 60) {
-            seconds = 0;
-            minutes++;
-           
-        }
+    seconds++;
+    if (seconds == 60) {
+        seconds = 0;
+        minutes++;
+    }
+    watch.innerHTML = formatTime(minutes, seconds);
+}
+
+function formatTime(minutes, seconds) {
     let m = minutes < 10 ? "0" + minutes : minutes;
     let s = seconds < 10 ? "0" + seconds : seconds;
-    watch.innerHTML = ` ${m} : ${s} `;
+    return `${m} : ${s}`;
 }
